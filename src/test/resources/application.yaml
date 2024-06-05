@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: novo-boleto-app-0504
+server:
+  port: 8080
+amazon:
+  dynamodb:
+    endpoint: http://localhost:8000/
+  aws:
+    accesskey: test
+    secretkey: test

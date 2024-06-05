@@ -1,0 +1,16 @@
+name: Deploy in CS
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  deploy:
+    uses: stackspot-product-growth/growth-workflows/.github/workflows/runtime-v1-microservice-deploy.yaml@main
+    with:
+      aws-ecr-repository-name: "novo-boleto-app-0504-ecr"
+      workspace-slug: "customer-growth-ws"
+      stkspot-enviroment: "production"
+      runner: "growth"
+      version: "${{ github.sha }}"
+    secrets: inherit

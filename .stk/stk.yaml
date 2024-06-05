@@ -1,0 +1,165 @@
+schema-version: v2
+kind: manifest
+metadata:
+  name: novo-boleto-app-0504
+  description: "Microsserviço responsável por criar boletos."
+  starter: growth/java-rest-api@3.1.3/java-rest-api-dynamo
+  stack-version-id: 01HD4KP0VDDGCKGAT66DM80TMM
+  stack: java-rest-api@3.1.3
+spec:
+  type: app
+  app-id: 01HZHNHCGC8KC708C7E08MTPBQ
+  plugins:
+    - name: growth/java-rest-api@3.1.3/microservice-creator-runtimes@2.0.0
+      alias: microservice-creator-runtimes-1717506143195
+      plugin-version-id: 01HBCDVCX5YTMJGQG849BK45FG
+      stack-version-id: 01HD4KP0VDDGCKGAT66DM80TMM
+      type: infra
+      inputs:
+        microservice_name: novo-boleto-app-0504
+        image: ''
+        port: '8080'
+        check_ingress: true
+        domain: stackspotgrowth.sbox.zuplabs.com.br
+        endpoint: /
+        environment: Production
+        region: us-east-1
+        memory: 512Mi
+        cpu: 500m
+        min_replicas: 1
+        max_replicas: 2
+        average_memory_utilization: 80
+        average_cpu_utilization: 80
+      inputs-envs: {}
+      connections:
+        generates:
+          - type: aws-iam-role-conn
+            selected: novo-boleto-app-0504-iam-conn
+            alias: aws-iam-role-conn
+        requires:
+          - type: aws-eks-conn
+            selected: customer-growth-demos
+            alias: eks
+      links:
+        generates: []
+    - name: growth/java-rest-api@3.1.3/runtime-dynamo-plugin@2.0.1
+      alias: runtime-dynamo-plugin-1717506143222
+      plugin-version-id: 01HBCEFBX2HYX62C16V92XJCDC
+      stack-version-id: 01HD4KP0VDDGCKGAT66DM80TMM
+      type: infra
+      inputs:
+        table_name: novo-boleto-app-0504-customers
+        region: us-east-1
+        billing_mode: PAY_PER_REQUEST
+        read_capacity: 10
+        write_capacity: 10
+        hash_key: id
+        hash_key_type: S
+        range_key: cpf
+        range_key_type: S
+        access_type: write
+        server_side_encryption: 'false'
+        point_in_time_recovery: 'true'
+      inputs-envs: {}
+      connections:
+        generates:
+          - type: aws-dynamo-conn
+            selected: novo-boleto-app-0504-dynamo-conn
+            alias: dynamo-default
+        requires:
+          - type: aws-iam-role-conn
+            selected: novo-boleto-app-0504-iam-conn
+            alias: iam-role-default
+      links:
+        generates: []
+    - name: growth/java-rest-api@3.1.3/spring-boot-base-plugin@1.0.0
+      alias: spring-boot-base-plugin-1717506108648
+      plugin-version-id: 01HBERTM7P2FSQPHSJF3MW64MJ
+      stack-version-id: 01HD4KP0VDDGCKGAT66DM80TMM
+      type: app
+      inputs:
+        project_name: novo-boleto-app-0504
+        spring_boot_version: 2.7.2
+        project_artifact_id: novo-boleto-app-0504
+        project_version: 0.0.1-SNAPSHOT
+        project_group_id: br.com.graphene
+        project_java_version: '11'
+        build_tool: Maven
+      inputs-envs: {}
+      connections:
+        generates: []
+        requires: []
+      links:
+        generates: []
+    - name: growth/java-rest-api@3.1.3/logging-plugin@1.0.0
+      alias: logging-plugin-1717506108660
+      plugin-version-id: 01HBERS8ZDM8KEB3JNTJ6MTBG0
+      stack-version-id: 01HD4KP0VDDGCKGAT66DM80TMM
+      type: app
+      inputs:
+        log_level: info
+      inputs-envs: {}
+      connections:
+        generates: []
+        requires: []
+      links:
+        generates: []
+    - name: growth/java-rest-api@3.1.3/metrics-plugin@1.0.1
+      alias: metrics-plugin-1717506108663
+      plugin-version-id: 01HBERR0PZ3K58QZWGHJYTRVX1
+      stack-version-id: 01HD4KP0VDDGCKGAT66DM80TMM
+      type: app
+      inputs: {}
+      inputs-envs: {}
+      connections:
+        generates: []
+        requires: []
+      links:
+        generates: []
+    - name: growth/java-rest-api@3.1.3/graphene-dynamo-plugin@0.0.5
+      alias: graphene-dynamo-plugin-1717506108665
+      plugin-version-id: 01HAZ6ATFE00WK0GK4HTZYFAFV
+      stack-version-id: 01HD4KP0VDDGCKGAT66DM80TMM
+      type: app
+      inputs:
+        generate_sample: true
+        table_name: novo-boleto-app-0504-customers
+        aws_region: us-east-1
+      inputs-envs: {}
+      connections:
+        generates: []
+        requires: []
+      links:
+        generates: []
+    - name: growth/java-rest-api@3.1.3/growth-pipeline@0.0.3
+      alias: growth-pipeline-1717506108673
+      plugin-version-id: 01HA77HC9X4BGXXWZC36GCP0R5
+      stack-version-id: 01HD4KP0VDDGCKGAT66DM80TMM
+      type: app
+      inputs:
+        app_name: novo-boleto-app-0504
+        stkspot_env: production
+        workspace_slug: customer-growth-ws
+        runner: growth
+        branch_base: main
+        dockerfile_check: true
+      inputs-envs: {}
+      connections:
+        generates: []
+        requires: []
+      links:
+        generates: []
+  global-inputs:
+    microservice_name: novo-boleto-app-0504
+    project_name: novo-boleto-app-0504
+    spring_boot_version: 2.7.2
+    project_artifact_id: novo-boleto-app-0504
+    project_group_id: br.com.graphene
+    project_java_version: '11'
+    build_tool: Maven
+    is_application_created_by_stackspot: true
+    docker_compose_application_service_name: novo-boleto-app-0504
+  global-computed-inputs:
+    "base_package": br.com.graphene.novoboletoapp0504
+    "package_dir": br/com/graphene/novoboletoapp0504
+  repository: https://github.com/stackspot-product-growth/novo-boleto-app-0504.git

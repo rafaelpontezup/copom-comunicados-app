@@ -1,0 +1,12 @@
+##Default profile
+spring:
+  application:
+    name: novo-boleto-app-0504
+server:
+  port: 8080
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health, metrics
+      base-path: /
