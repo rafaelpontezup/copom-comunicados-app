@@ -1,6 +1,6 @@
-package br.com.graphene.novoboletoapp0504.sampledynamo.repository;
+package br.com.graphene.copomcomunicados.sampledynamo.repository;
 
-import br.com.graphene.novoboletoapp0504.sampledynamo.entity.Customer;
+import br.com.graphene.copomcomunicados.sampledynamo.entity.Customer;
 import org.socialsignin.spring.data.dynamodb.repository.EnableScan;
 import org.springframework.data.repository.CrudRepository;
 

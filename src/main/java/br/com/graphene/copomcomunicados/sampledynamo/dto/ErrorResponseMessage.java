@@ -1,4 +1,4 @@
-package br.com.graphene.novoboletoapp0504.sampledynamo.dto;
+package br.com.graphene.copomcomunicados.sampledynamo.dto;
 
 public class ErrorResponseMessage {
   private final int code;

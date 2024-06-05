@@ -1,4 +1,4 @@
-package br.com.graphene.novoboletoapp0504.config;
+package br.com.graphene.copomcomunicados.config;
 
 import com.amazonaws.services.dynamodbv2.AmazonDynamoDB;
 import com.amazonaws.services.dynamodbv2.AmazonDynamoDBClientBuilder;
@@ -9,7 +9,7 @@ import org.springframework.context.annotation.Profile;
 
 @Configuration
 @Profile("!local")
-@EnableDynamoDBRepositories("br.com.graphene.novoboletoapp0504.*")
+@EnableDynamoDBRepositories("br.com.graphene.copomcomunicados.*")
 public class DynamoDBConfig {
 
   @Bean

@@ -1,7 +1,7 @@
-package br.com.graphene.novoboletoapp0504.sampledynamo.repository;
+package br.com.graphene.copomcomunicados.sampledynamo.repository;
 
-import br.com.graphene.novoboletoapp0504.StackApplication;
-import br.com.graphene.novoboletoapp0504.sampledynamo.entity.Customer;
+import br.com.graphene.copomcomunicados.StackApplication;
+import br.com.graphene.copomcomunicados.sampledynamo.entity.Customer;
 import com.amazonaws.services.dynamodbv2.AmazonDynamoDB;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapper;
 import com.amazonaws.services.dynamodbv2.local.main.ServerRunner;

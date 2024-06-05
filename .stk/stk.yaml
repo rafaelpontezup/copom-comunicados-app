@@ -160,6 +160,6 @@ spec:
     is_application_created_by_stackspot: true
     docker_compose_application_service_name: copom-comunicados-app
   global-computed-inputs:
-    "base_package": br.com.graphene.novoboletoapp0504
-    "package_dir": br/com/graphene/novoboletoapp0504
+    "base_package": br.com.graphene.copomcomunicados
+    "package_dir": br/com/graphene/copomcomunicados
   repository: https://github.com/rafaelpontezup/copom-comunicados-app.git

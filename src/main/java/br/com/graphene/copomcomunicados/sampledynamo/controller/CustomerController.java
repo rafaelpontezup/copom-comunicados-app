@@ -1,8 +1,8 @@
-package br.com.graphene.novoboletoapp0504.sampledynamo.controller;
+package br.com.graphene.copomcomunicados.sampledynamo.controller;
 
-import br.com.graphene.novoboletoapp0504.sampledynamo.dto.CreateCustomerRequest;
-import br.com.graphene.novoboletoapp0504.sampledynamo.service.CustomerService;
-import br.com.graphene.novoboletoapp0504.sampledynamo.entity.Customer;
+import br.com.graphene.copomcomunicados.sampledynamo.dto.CreateCustomerRequest;
+import br.com.graphene.copomcomunicados.sampledynamo.service.CustomerService;
+import br.com.graphene.copomcomunicados.sampledynamo.entity.Customer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

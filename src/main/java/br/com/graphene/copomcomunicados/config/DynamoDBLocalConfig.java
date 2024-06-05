@@ -1,4 +1,4 @@
-package br.com.graphene.novoboletoapp0504.config;
+package br.com.graphene.copomcomunicados.config;
 
 import com.amazonaws.auth.AWSCredentials;
 import com.amazonaws.auth.AWSStaticCredentialsProvider;
@@ -14,7 +14,7 @@ import org.springframework.context.annotation.Profile;
 
 @Configuration
 @Profile("local")
-@EnableDynamoDBRepositories("br.com.graphene.novoboletoapp0504.*")
+@EnableDynamoDBRepositories("br.com.graphene.copomcomunicados.*")
 public class DynamoDBLocalConfig {
 
   @Value("${amazon.dynamodb.endpoint}")

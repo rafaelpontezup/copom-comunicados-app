@@ -1,8 +1,8 @@
 version: '3.9'
 services:
-  "novo-boleto-app-0504":
-    image: novo-boleto-app-0504
-    container_name: novo-boleto-app-0504
+  "copom-comunicados-app":
+    image: copom-comunicados-app
+    container_name: copom-comunicados-app
     restart: always
     environment:
       SPRING_PROFILES_ACTIVE: default
@@ -16,8 +16,8 @@ services:
       start_period: 5s
       timeout: 10s
     networks:
-      - app-novo-boleto-app-0504
+      - app-copom-comunicados-app
 networks:
-  app-novo-boleto-app-0504:
+  app-copom-comunicados-app:
     driver: bridge
 

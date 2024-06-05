@@ -1,12 +1,29 @@
-##Default profile
+##
+# Spring - default profile
+##
 spring:
+  output:
+    ansi:
+      enabled: ALWAYS
   application:
-    name: novo-boleto-app-0504
+    name: copom-comunicados-app
+
 server:
   port: 8080
+
 management:
   endpoints:
     web:
       exposure:
         include: health, metrics
       base-path: /
+
+##
+# Open Feign
+##
+feign:
+  client:
+    config:
+      default:
+        connectTimeout: 5000
+        readTimeout: 5000

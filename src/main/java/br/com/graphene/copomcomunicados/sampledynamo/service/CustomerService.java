@@ -1,7 +1,7 @@
-package br.com.graphene.novoboletoapp0504.sampledynamo.service;
+package br.com.graphene.copomcomunicados.sampledynamo.service;
 
-import br.com.graphene.novoboletoapp0504.sampledynamo.entity.Customer;
-import br.com.graphene.novoboletoapp0504.sampledynamo.repository.CustomerRepository;
+import br.com.graphene.copomcomunicados.sampledynamo.entity.Customer;
+import br.com.graphene.copomcomunicados.sampledynamo.repository.CustomerRepository;
 import com.amazonaws.services.kms.model.NotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
