@@ -1,7 +1,4 @@
-package br.com.graphene.copomcomunicados.sampledynamo.repository;
-
-import br.com.graphene.copomcomunicados.StackApplication;
-import br.com.graphene.copomcomunicados.sampledynamo.entity.Customer;
+package br.com.graphene.copom.sampledynamo.repository;
 
 import com.amazonaws.services.dynamodbv2.AmazonDynamoDB;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapper;
@@ -9,6 +6,10 @@ import com.amazonaws.services.dynamodbv2.local.main.ServerRunner;
 import com.amazonaws.services.dynamodbv2.local.server.DynamoDBProxyServer;
 import com.amazonaws.services.dynamodbv2.model.CreateTableRequest;
 import com.amazonaws.services.dynamodbv2.model.ProvisionedThroughput;
+
+import br.com.graphene.copom.StackApplication;
+import br.com.graphene.copom.sampledynamo.entity.Customer;
+
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
@@ -19,8 +20,8 @@ import org.springframework.test.context.ActiveProfiles;
 
 import java.util.List;
 
-@SpringBootTest(classes = StackApplication.class)
 @ActiveProfiles("local")
+@SpringBootTest(classes = StackApplication.class)
 public class CustomerRepositoryTest {
 
   @Autowired

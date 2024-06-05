@@ -1,4 +1,4 @@
-package br.com.graphene.copomcomunicados.sampledynamo.dto;
+package br.com.graphene.copom.sampledynamo.dto;
 
 public class ErrorResponseMessage {
   private final int code;

@@ -1,4 +1,4 @@
-package br.com.graphene.copomcomunicados;
+package br.com.graphene.copom;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

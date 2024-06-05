@@ -1,8 +1,9 @@
-package br.com.graphene.copomcomunicados.sampledynamo.repository;
+package br.com.graphene.copom.sampledynamo.repository;
 
-import br.com.graphene.copomcomunicados.sampledynamo.entity.Customer;
 import org.socialsignin.spring.data.dynamodb.repository.EnableScan;
 import org.springframework.data.repository.CrudRepository;
+
+import br.com.graphene.copom.sampledynamo.entity.Customer;
 
 import java.util.Optional;
 

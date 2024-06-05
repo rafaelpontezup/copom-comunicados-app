@@ -1,4 +1,4 @@
-package br.com.graphene.copomcomunicados.comunicados;
+package br.com.graphene.copom.comunicados;
 
 import java.util.List;
 

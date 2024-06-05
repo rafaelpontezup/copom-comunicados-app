@@ -1,4 +1,4 @@
-package br.com.graphene.copomcomunicados;
+package br.com.graphene.copom;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
