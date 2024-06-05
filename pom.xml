@@ -1,5 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
 		<groupId>org.springframework.boot</groupId>
@@ -8,13 +9,16 @@
 		<relativePath />
 		<!-- lookup parent from repository -->
 	</parent>
+
 	<groupId>br.com.graphene</groupId>
-	<artifactId>novo-boleto-app-0504</artifactId>
+	<artifactId>copom-comunicados-app</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
+
 	<properties>
 		<java.version>11</java.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
+
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -73,13 +77,14 @@
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
+	
 	<build>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<configuration>
-					<finalName>novo-boleto-app-0504-0.0.1-SNAPSHOT-final</finalName>
+					<finalName>copom-comunicados-app-0.0.1-SNAPSHOT-final</finalName>
 				</configuration>
 			</plugin>
 		</plugins>

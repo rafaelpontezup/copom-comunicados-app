@@ -1,8 +1,8 @@
 schema-version: v2
 kind: manifest
 metadata:
-  name: novo-boleto-app-0504
-  description: "Microsserviço responsável por criar boletos."
+  name: copom-comunicados-app
+  description: "Microsserviço responsável por expor API REST com comunicados do Copom"
   starter: growth/java-rest-api@3.1.3/java-rest-api-dynamo
   stack-version-id: 01HD4KP0VDDGCKGAT66DM80TMM
   stack: java-rest-api@3.1.3
@@ -16,7 +16,7 @@ spec:
       stack-version-id: 01HD4KP0VDDGCKGAT66DM80TMM
       type: infra
       inputs:
-        microservice_name: novo-boleto-app-0504
+        microservice_name: copom-comunicados-app
         image: ''
         port: '8080'
         check_ingress: true
@@ -34,7 +34,7 @@ spec:
       connections:
         generates:
           - type: aws-iam-role-conn
-            selected: novo-boleto-app-0504-iam-conn
+            selected: copom-comunicados-app-iam-conn
             alias: aws-iam-role-conn
         requires:
           - type: aws-eks-conn
@@ -48,7 +48,7 @@ spec:
       stack-version-id: 01HD4KP0VDDGCKGAT66DM80TMM
       type: infra
       inputs:
-        table_name: novo-boleto-app-0504-customers
+        table_name: copom-comunicados-app-customers
         region: us-east-1
         billing_mode: PAY_PER_REQUEST
         read_capacity: 10
@@ -64,11 +64,11 @@ spec:
       connections:
         generates:
           - type: aws-dynamo-conn
-            selected: novo-boleto-app-0504-dynamo-conn
+            selected: copom-comunicados-app-dynamo-conn
             alias: dynamo-default
         requires:
           - type: aws-iam-role-conn
-            selected: novo-boleto-app-0504-iam-conn
+            selected: copom-comunicados-app-iam-conn
             alias: iam-role-default
       links:
         generates: []
@@ -78,9 +78,9 @@ spec:
       stack-version-id: 01HD4KP0VDDGCKGAT66DM80TMM
       type: app
       inputs:
-        project_name: novo-boleto-app-0504
+        project_name: copom-comunicados-app
         spring_boot_version: 2.7.2
-        project_artifact_id: novo-boleto-app-0504
+        project_artifact_id: copom-comunicados-app
         project_version: 0.0.1-SNAPSHOT
         project_group_id: br.com.graphene
         project_java_version: '11'
@@ -123,7 +123,7 @@ spec:
       type: app
       inputs:
         generate_sample: true
-        table_name: novo-boleto-app-0504-customers
+        table_name: copom-comunicados-app-customers
         aws_region: us-east-1
       inputs-envs: {}
       connections:
@@ -137,7 +137,7 @@ spec:
       stack-version-id: 01HD4KP0VDDGCKGAT66DM80TMM
       type: app
       inputs:
-        app_name: novo-boleto-app-0504
+        app_name: copom-comunicados-app
         stkspot_env: production
         workspace_slug: customer-growth-ws
         runner: growth
@@ -150,16 +150,16 @@ spec:
       links:
         generates: []
   global-inputs:
-    microservice_name: novo-boleto-app-0504
-    project_name: novo-boleto-app-0504
+    microservice_name: copom-comunicados-app
+    project_name: copom-comunicados-app
     spring_boot_version: 2.7.2
-    project_artifact_id: novo-boleto-app-0504
+    project_artifact_id: copom-comunicados-app
     project_group_id: br.com.graphene
     project_java_version: '11'
     build_tool: Maven
     is_application_created_by_stackspot: true
-    docker_compose_application_service_name: novo-boleto-app-0504
+    docker_compose_application_service_name: copom-comunicados-app
   global-computed-inputs:
     "base_package": br.com.graphene.novoboletoapp0504
     "package_dir": br/com/graphene/novoboletoapp0504
-  repository: https://github.com/stackspot-product-growth/novo-boleto-app-0504.git
+  repository: https://github.com/rafaelpontezup/copom-comunicados-app.git
